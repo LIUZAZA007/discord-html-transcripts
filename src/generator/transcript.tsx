@@ -54,21 +54,25 @@ export default async function DiscordMessages({ messages, channel, callbacks, ..
 
       {/* footer */}
       <div style={{ textAlign: 'center', width: '100%' }}>
-        {options.footerText
-          ? options.footerText
-              .replaceAll('{number}', messages.length.toString())
-              .replace('{s}', messages.length > 1 ? 's' : '')
-          : `Exported ${messages.length} message${messages.length > 1 ? 's' : ''}.`}{' '}
-        {options.poweredBy ? (
-          <span style={{ textAlign: 'center' }}>
-            Powered by{' '}
-            <a href="https://github.com/ItzDerock/discord-html-transcripts" style={{ color: 'lightblue' }}>
-              discord-html-transcripts
-            </a>
-            .
-          </span>
-        ) : null}
-      </div>
+  {options.footerText
+    ? options.footerText
+        .replaceAll('{number}', messages.length.toString())
+        .replace('{s}', messages.length > 1 ? 's' : '')
+    : `Exported ${messages.length} message${messages.length > 1 ? 's' : ''}.`}{' '}
+  {options.poweredBy ? (
+    <span style={{ textAlign: 'center' }}>
+      Powered by{' '}
+      <a href="https://polygony.co/" style={{ color: 'lightblue' }}>
+        Polygony
+      </a>{' '}
+      and{' '}
+      <a href="https://github.com/ItzDerock/discord-html-transcripts" style={{ color: 'lightblue' }}>
+      ItzDerock
+      </a>
+      .
+    </span>
+  ) : null}
+</div>
     </DiscordMessagesComponent>
   );
 }
